@@ -1,0 +1,33 @@
+29.10.2024 
+			-- Sistemsko programiranje --
+
+Sistemsko programiranje 
+	- softver mnogo zavisi od arhitekture za koju se pise, usko je vezan za sistem
+
+
+Sistemski poziv 
+	- omogucavaju da se pristupa rusursima racunara kojima ne mogu direktno pristupiti korisnici
+	- operativni sistem ih nudi radi omogucavanja koriscenja resursa
+
+
+gdb
+	- break [broj]
+	- continue - nastavlja izvrsenje
+	- run - pocinje izvrsenje
+	- next - izvrsava sledecu liniju (step over)
+	- step - ulazi u funkciju (step into)
+
+
+
+			-- Process File System -- 
+
+- Procfs predstavlja pseudodatotecni sistem
+- On se ne nalazi na disku vec se nalazi u operativnoj memoriji racunara
+- Ne znaju svoju velicinu, ako idemo ls svuda pisu 0
+- proc/... - ima fajlovi za informacije o procesima i sistemu
+- datoteke procfs sistema mogu se citati obicnim funkcijama za rad sa fajlovima iz <stdio.h>
+
+
+
+
+
