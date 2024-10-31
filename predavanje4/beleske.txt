@@ -14,8 +14,37 @@
 - Sve niti jednog procesa dele resurse alocirane procesu kome pripadaju
 	- Imaju svoj stek itd... ali to se alocira procesu
 	- Nalaze se u istom programskom kodu	
+	- Ako jedna nit otvori fajl, sve niti mu imaju pristup	
+	- Sve imaju pristup istim promenljivama, pa je bitno da se sinhronizuju	
 
 - Dodeljivanje resusrsa vrsi se na nivou proces
+
+- Brze je kreirati novu u nit u procesu nego novi proces
+
+- foreground nit - ona mora biti responzivna, ima visok prioritet
+- background nit- koristi se za operacije koje su spore
+
+- U UNIX-u niti su dodate naknadno kreiranjem biblioteke sa odgovarajucim funkcijama, to su User Level niti
+	- Biblioteka poseduje sve fnje za rad sa nitima
+	- Operativni sistem ove niti ne vidi, vidi samo jedan proces
+	- Rad sa nitima ne zahteva kernel mode
+	- Kreiranje niti je brze
+	- Mana je sto, na primer, ako jedna nit zove UI operaciju sve niti bivaju blokirane
+	- OS ne razlikuje niti, kontrolu vrsi na nivou procesa
+
+- Niti nivoa (KLT) kernela se implementiraju u samom operativnom sistemu
+	- Svaki proces ima jednu ili vise niti
+	- Svaka moze da se izvrsava na nekom jezgru
+	- Nezavisne su, mogu da se individualno blokiraju
+	- Ipak je pozeljno da se niti jednog procesa izvrsavaju
+	  na istom jezgru, jedan od razloga je kes
+	- Zamena niti je sporija, zahteva kernel mode i lici na zemnu procesa	
+	- Kreiranje i upravljanje nitima je takodje sporije
+
+- Moguce je i hibridna implementecija izmedju ULT i KLT
+
+
+
 
 
 

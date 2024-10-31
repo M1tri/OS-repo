@@ -5,5 +5,5 @@ if [ $# -eq "1" ]; then
 	git push
 
 else
-	echo "Neodgovarajc broj argumenata"
+	echo "Neodgovarajuci broj argumenata"
 fi
