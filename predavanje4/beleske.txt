@@ -1,0 +1,22 @@
+31.10.2024
+
+			-- Niti --
+
+- Nit je osnovna jedinica izvrsenja
+- Svaki proces ima bar jednu nit koja izvrsava main funkciju
+
+- Nitima su pridruzene sve osobine kao i za proces
+	- Prioritet
+	- Stek
+	- Kontekst
+	- ...
+
+- Sve niti jednog procesa dele resurse alocirane procesu kome pripadaju
+	- Imaju svoj stek itd... ali to se alocira procesu
+	- Nalaze se u istom programskom kodu	
+
+- Dodeljivanje resusrsa vrsi se na nivou proces
+
+
+
+
