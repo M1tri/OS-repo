@@ -1,0 +1,51 @@
+05.11.2024
+
+		--- Procesi ---
+
+- Program je mrtav, kada se pokrene tad ozivi i postane proces
+- Proces ima svoj identifikator, PID
+
+- Jedan program moze da izvrsavaju vise procesa 
+
+
+	       MEM
+	| PID = 5	|
+	| adr. prostor	| Ova dva mogu biti isti program, ali ce OS kreirati po jedan proces za oba
+	|		|
+	| PID = 7	|
+	| adr. prostor	|
+	|		|
+	|		|
+
+- Svaki proces cuva kod, podatke, magacin i PCB (koji sadrzi, izmedju ostalog, PID)
+
+- Svaki proces u Linuxu nastaje dupliranjem postojeceg procesa, ali dobija novi PID
+	- Sadrzaj je isti, ali ne zauzimaju isti deo memorije
+	- Metapodaci su restartovani (koliko dugo radi, koliko memorije koristi itd...)
+	- Ovi procesa su deca procesa od kog su duplirani
+	- Proces putem sistemskog poziva menja svoj kod
+
+
+- Stablo procesa diktira stanje operativnog sistema, zato za kreiranje procesa mora de se koriste sistemski pozivi (fork)
+- Operativni sistem uvek sumnja u nas
+
+- exit - sistemski poziv za zavrsetak procesa
+- wait vraca status procesa koji je pozvao exit, a wait zove roditelj tog procesa
+- kada se wait pozove ceka da bilo koje dete umre i vraca njegov status 
+	-wait (int* status_ptr) u status_ptr se upise kod koje je dete vratilo sa exit
+- wait moze da se pozove sa PID i tad ceka da dete sa PID umre
+
+- execl - variadicno
+- execv - nije variadican
+- execvp, execle - isto ko ove gore ali prvo trazi u path promenljivoj
+- druge dve ne koristimo i one su SUS
+
+			--- Niti ---
+
+- Ako novi proces treba da ima iste podatke kao postojeci, to treba biti nit
+- Niti dele adresni prostor, za razliku od procesa
+- gcc program.c -o program -lpthread - mora da linkujemo sa bibliotekom lpthread
+- Uvek treba da gledamo da kreiramo Nit ako je moguce
+
+
+
