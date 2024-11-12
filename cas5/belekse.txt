@@ -1,0 +1,56 @@
+11.12.2024
+
+		--- Sinhronizacija ---
+
+	- Semafori -
+
+	- Izmislio gi Dijkstra	
+	- P i V (nesto holandjaski), mi koristimo WAIT i SIGNAL
+	- Ove operacije su atomicne
+	- Tipovi semafor
+		- Mutex ( 0 ili 1, samo jedna nit moze uci u kriticnu sekciju)
+		- Opsti semafor ( 0...N, do N Niti moze uci u kriticnu sekciju)
+	- Nedostaci
+		- Redosled P i V (svaka P operaciju ima svoju V operaciju)
+
+- Sinhronizacija niti -
+	
+	- Laksa je sinhronizacija niti jer dele adresni prostor
+	- Semafor koji kreira jedna nit svim nitima tog procesa je dostupan
+
+	- Mutex -
+
+	- Implementacija binarnog semafora
+	- Kada se kreira instanciran je na 1, pa odma cim se kreira dozvoljava pristup sekciji
+	- Mutex mozemo da inicijalizujemo, zovem P i V i da ga unistimo
+	- Mutex mora da unisti nit koja ga je kreirala
+	- Ako nam treba mutex koji nece da unisti nit koja ga kreira moramo da koristimo opsti semafor
+
+	- Uslovne promenljive -
+
+	- Ako koristimo uslovne promenljive moramo da koristimo mutex
+	- Njome signaliziramo da neka vrednost sada postoji, sama uslovna promenljiva ne cuva tu vrednost
+	- wait() se ne moze zvati van kriticne sekcije, uslovna promenljiva je usko vezana za mutex
+	- signal() sam zove unlock da bi se posle mogo zvati lock
+
+	- Posix semafori -
+
+	- Implementacija opsteg semafora
+	- Manje ogranicnje, ne mora ista nit da zakkjuca i otkljuca semafor
+	- sem_t from <semaphor.h>
+	- Semaforu stavljamo koju god pocetnu vrednost
+
+
+- Sinhronizacija procesa -
+
+	- System V semafor-
+	
+	- On nije samo jedan semafor vec niz semafora, gde svaki ima svoju promenljivu
+	- key_t - indentifikator na celom operativnom sistemu
+	- nsem - broj semafora koji postoji unutar system V
+
+
+
+
+
+

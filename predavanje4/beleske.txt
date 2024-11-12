@@ -43,7 +43,7 @@
 
 - Moguce je i hibridna implementecija izmedju ULT i KLT
 
-
+---
 
 
 
