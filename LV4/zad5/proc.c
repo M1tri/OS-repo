@@ -34,7 +34,7 @@ int main(int argc, char** argv)
 		if (count == 0)
 			break;
 	
-		for (int i = 0; i < 100; i++)
+		for (int i = 0; i < count; i++)
 			printf("%c", linija[i]);
 	}
 
