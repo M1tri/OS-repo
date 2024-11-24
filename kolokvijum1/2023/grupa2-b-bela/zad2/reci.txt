@@ -1,0 +1,10 @@
+veljkovic
+fork
+wait
+pipe
+malloc
+main
+fd
+END
+meme
+chill

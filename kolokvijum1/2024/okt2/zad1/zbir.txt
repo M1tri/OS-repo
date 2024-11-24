@@ -1,0 +1,6 @@
+druga.txt 1 | neparna
+prva.txt 1 | parna
+druga.txt 2 | neparna
+prva.txt 2 | parna
+druga.txt 3 | neparna
+prva.txt 3 | parna
