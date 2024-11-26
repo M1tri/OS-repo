@@ -1,0 +1,33 @@
+26.11.2024
+
+	-- Medjuprocesna komunikacija --
+
+-- Signali
+
+- Proces detektuje da je dobio signal tek tokom context swithinga
+  ili kada se vrati iz sistemskog poziva
+
+- Signal se detektuje i kada se proces vraca iz kernel u user mode
+
+- Kill (kome_saljem, id_signala)
+    
+       fork()
+  shell-------child
+
+- ctrl-c stisnut u shellu a on to prosledi detetu da ono umre
+- shell forkuje da kreira program koji mi pokrecemo
+
+- ctrl-z stopira proces ali ga ne unistava, ceka da ga opet pustimo sa fg ili bg itd...
+- ctrl-z je signal SIGTSTP
+- ako je sig u kill(pid, sig) jednak 0, onda testiramo da li imamo privilegiju da 
+  saljemo signal tom procesu
+
+- signal(SIGNAL, handler(int)) - handleru se prosledi SIGNAL kada se primi signal SIGNAL
+- SIG_DFL = signal(SIGNAL, handler) 
+- signal(SIGNAL, SIG_DFL) vraca pokazivac na handler
+- pause() - ceka signal 
+- alarm(uint seconds) - za seconds sekundi ce se posalje signal SIGALRM
+- Neke distribucije Linuxa na pocektu funkciju za handling singala
+  postave handler na default, uradi signal(SIGINT, SIG_DFL)
+
+-  
